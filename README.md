@@ -47,6 +47,32 @@ Write an update of repEmail which do not update properly (do not update it every
 
 The ‘unsafe’ part of this update is the fact that both the repName and the customerName can change, this would lead to undesired updates. In other word it lacks the unique identification of the desired update. 
 
+Exercise 4
+In this exercise we will assume we have materialized this query into a table tblEx4Sydney.
+Assume we have an index on customerName, and assume a fan-out in the B+ tree of 4.
+Draw a representation of of the B+ tree with index and leaf nodes, as well as the actual table data. The drawing must be a combination of Figure 1.1 and 1.2 from Anatomy of an SQL index.
+
+     with my_cust as
+        (select customerNumber,
+            customerName,
+            customers.country as custCountry,
+            offices.city      as repCity
+         from employees
+            inner join customers on employees.employeeNumber = customers.salesRepEmployeeNumber
+            inner join offices on employees.officeCode = offices.officeCode)
+     select *
+     from my_cust
+     where repCity = 'Sydney'
+
+The query is as the table below
+
+![image](https://user-images.githubusercontent.com/40825848/54499937-e9607900-4917-11e9-898a-9f6ea2077bff.png)
+
+
+
+
+
+
 
 
 
