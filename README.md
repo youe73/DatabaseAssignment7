@@ -68,8 +68,13 @@ The query is as the table below
 
 ![image](https://user-images.githubusercontent.com/40825848/54499937-e9607900-4917-11e9-898a-9f6ea2077bff.png)
 
+The B+tree drawing
+
+![image](https://user-images.githubusercontent.com/40825848/54500234-f3d04200-491a-11e9-8b79-c2f76434bc99.png)
 
 
+
+The path to find "Handji Gifts& Co" is done by searching in ascending order and following until the value is equal or larger. This process continues to the leaf and the traversal is completed when the value is found.  
 
 
 
